@@ -37,7 +37,7 @@
           </el-input>
         </el-form-item>
         <el-form-item style="margin-bottom: 60px">
-          <el-button style="width: 100%" type="primary" :loading="loading" @click.native.prevent="handleLogin">
+          <el-button style="width: 100%" type="primary" :loading="loading" @click="handleLogin">
             登录
           </el-button>
         </el-form-item>
@@ -118,6 +118,8 @@
         }
       },
       handleLogin() {
+        this.dialogVisible =false;
+        setSupport(true);
         this.$refs.loginForm.validate(valid => {
           if (valid) {
             let isSupport = getSupport();
